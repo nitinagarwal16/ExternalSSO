@@ -5,14 +5,14 @@ import com.fasterxml.jackson.databind.JsonNode;
 /**
  * Created by Nitin on 6/12/2017.
  */
-
+@JsonIgnoreProperties(ignoreUnknown = true)
 class Profile {
     @JsonProperty("lastName")
     String lastName;
-    @JsonProperty("secondEmail")
-    String secondEmail;
-    @JsonProperty("mobilePhone")
-    String mobilePhone;
+//    @JsonProperty("secondEmail")
+//    String secondEmail;
+//    @JsonProperty("mobilePhone")
+//    String mobilePhone;
     @JsonProperty("email")
     String email;
     @JsonProperty("login")
