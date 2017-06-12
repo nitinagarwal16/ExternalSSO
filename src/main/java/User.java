@@ -5,31 +5,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 /**
  * Created by Nitin on 6/12/2017.
  */
-@JsonIgnoreProperties(ignoreUnknown = true)
-class Profile {
-    @JsonProperty("lastName")
-    String lastName;
-//    @JsonProperty("secondEmail")
-//    String secondEmail;
-//    @JsonProperty("mobilePhone")
-//    String mobilePhone;
-    @JsonProperty("email")
-    String email;
-    @JsonProperty("login")
-    String login;
-    @JsonProperty("firstName")
-    String firstName;
 
-    @Override
-    public String toString() {
-        return "Profile{" +
-                "email='" + email + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", login='" + login + '\'' +
-                ", lastName='" + lastName + '\'' +
-                '}';
-    }
-}
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 class User {
@@ -47,6 +23,34 @@ class User {
 //    String login; //login name
     @JsonProperty("lastLogin")
     String lastLogin;
+
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    static class Profile {
+        @JsonProperty("lastName")
+        String lastName;
+        //    @JsonProperty("secondEmail")
+//    String secondEmail;
+//    @JsonProperty("mobilePhone")
+//    String mobilePhone;
+        @JsonProperty("email")
+        String email;
+        @JsonProperty("login")
+        String login;
+        @JsonProperty("firstName")
+        String firstName;
+
+        //    Profile(){}
+        @Override
+        public String toString() {
+            return "Profile{" +
+                    "email='" + email + '\'' +
+                    ", firstName='" + firstName + '\'' +
+                    ", login='" + login + '\'' +
+                    ", lastName='" + lastName + '\'' +
+                    '}';
+        }
+    }
+
     @JsonProperty("profile")
     Profile profile;
 
